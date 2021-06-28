@@ -1,0 +1,591 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    scroll-behavior: smooth;
+}
+
+.menu {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 20px 10px;
+    overflow: hidden;
+}
+
+.menu img {
+    width: 50px;
+    padding-left: 20px;
+}
+
+.input-menu {
+    display: none;
+}
+
+/* Animación que se mueve a la isquierda */
+@keyframes mover-izquierda {
+    from { transform: translateX(200%);}
+    to { transform: translateX(0%);}
+}
+
+.input-menu:checked + .cont-menu {
+    display: block;
+    left: 0px;
+    animation: mover-izquierda 1s;
+}
+
+.label-menu {
+    cursor: pointer;
+    position: relative;
+    height: 30px;
+    width: 40px;
+    display: block;
+}
+
+.linea,
+.linea::after,
+.linea::before {
+    content: ' ';
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    border-radius: 3px;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    transition: all .3s ease-in-out;
+}
+
+.linea::after {
+    top: 7px;
+    height: 3px;
+    border-radius: 3px;
+}
+
+.linea::before {
+    top: 15px;
+}
+
+.input-menu:checked ~ label > .linea {
+    transform: translateY(10px) rotate(45deg);
+    transition: all .3s ease-in-out;
+}
+
+.input-menu:checked ~ label > .linea::after {
+    transform: translateY(-7px) rotate(90deg);
+    transition: all .3s ease-in-out;
+}
+
+.input-menu:checked ~ label .linea::before {
+    opacity: 0;
+    transform: translateY(-20px) rotate(100deg);
+    transition: all .3s ease-in-out;
+}
+
+.desktop-menu {
+    display: none;
+}
+
+.cont-menu {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: -100px;
+    background-color: blue;
+}
+
+.cont-menu,
+.cont-menu ul,
+.cont-menu li,
+.cont-menu a {
+    width: 100vw;
+}
+
+.cont-menu li {
+    list-style: none;
+}
+
+.cont-menu a {
+    text-decoration: none;
+    padding: 15px 30px;
+    display: block;
+    color: white;
+    border-bottom: 1px solid white;
+    font-family: 'IBM Plex Mono', monospace, sans-serif;
+}
+
+.cont-menu a:hover {
+    color: #00F3BB;
+    text-decoration: line-through;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-1 {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    flex-direction: column;
+    width: 100vw;
+    text-align: center;
+    padding: 30px 0px;
+}
+
+.contenedor-1 .desktop {
+    display: none;
+}
+
+.contenedor-1 h1 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 3em;
+    font-weight: 500;
+    text-align: start;
+    width: 100%;
+    padding: 0px 25px;
+}
+
+.contenedor-1 h1 .espacio {
+    display: block;
+}
+.contenedor-1 h1 .punto {
+    color: #0000ff;
+}
+
+.contenedor-1 p {
+    font-family: 'IBM Plex Mono', monospace, sans-serif;
+    text-align: justify;
+    font-size: 1em;
+    font-weight: 500;
+    color: #3b3c46; 
+    padding: 20px 30px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    color:#3b3c46;
+    font-family: 'IBM Plex Mono', monospace, sans-serif;
+    background-color: #00F3BB;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 15px 10px;
+    width: 90%;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg,#00F3BB,#0000FF);
+    color: white;
+    transition: all .3s linear;
+}
+
+h2 {
+    font-family: 'IBM Plex Sans', monospace, sans-serif;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.contenedor-2 h2 {
+    font-size: 2.5em;
+    color: white;
+    font-family: 'IBM Plex Sans', monospace, sans-serif;
+    font-weight: 500;
+    padding: 100px 0px 30px 20px;
+}
+.contenedor-2 {
+    background: linear-gradient( #0000FF, #0000A3);
+    width: 100vw;
+    padding: 50px 0px 200px 0px;
+    clip-path: polygon(0 7%, 100% 0, 100% 95%, 0 100%);
+    z-index: 1;
+}
+
+.cont-iframe {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 50px;
+}
+
+.contenedor-3 {
+    width: 100vw;
+    margin-top: -110px;
+    z-index: 10;
+    position: relative;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+.smartphone {
+    z-index: 10;
+    width: 100%;
+}
+
+.smartphone img {
+    width: 70%;
+}
+
+.h2-2 {
+    color: black;
+    text-align: start;
+    font-size: 2.6em;
+    padding: 20px 20px;
+}
+
+.contenedor-3 p {
+    font-family: 'IBM Plex Mono', monospace, sans-serif;
+    padding: 0px 20px;
+    position: relative;
+    line-height: 25px;
+    text-align: justify;
+    margin: 0px 25px;
+}
+
+.contenedor-3 p:first-of-type {
+    padding-bottom: 20px;
+}
+
+.contenedor-4 {
+    width: 100vw;
+    height: auto;
+}
+
+.cont-img {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cont-img img {
+    width: 100%;
+    margin-top: -2px;
+}
+
+.contenedor-5 {
+    width: 100vw;
+    margin-top: 25px;
+}
+
+.contenedor-5 figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px ;
+}
+
+.contenedor-5 figcaption {
+    font-weight:bold;
+    font-size: 1.7em;
+    font-family: 'IBM Plex Sans', monospace, sans-serif;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.contenedor-6 {
+    background: linear-gradient( #0000FF, #0000A3);
+    width: 100vw;
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 30px;
+}
+
+.contenedor-6 h2 {
+    text-align: center;
+    font-size: 2.3em;
+    width: 80%;
+    color: white;
+}
+
+.contenedor-6 .btn {
+    margin-top: 20px;
+}
+
+footer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer p {
+    font-family: 'IBM Plex Mono', monospace, sans-serif;
+    font-size: 1em;
+    padding-top: 30px;
+}
+
+.social-media a {
+    text-decoration: none;
+}
+
+.social-media .bx:hover {
+    color: #00F3BB;
+}
+
+.social-media .bx {
+    padding: 25px 20px;
+    color: black;
+    font-size: 1.3em;
+}
+
+@media screen and (min-width: 640px) {
+
+    header .contenedor-1 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 40px;
+    }
+
+    .contenedor-1 .desktop {
+        display: block;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .contenedor-1 p {
+        text-align: start;
+        padding-right: 230px;
+    }
+
+    .div-btn {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-left: 30px;
+    }
+
+    .contenedor-1 .btn {
+        width: 30%;
+        padding: 12px 20px;
+    }
+
+    .cont-iframe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .cont-iframe iframe {
+        max-width: 550px;
+        padding-right: 20px;
+        width: 60%;
+    }
+
+    .contenedor-2 h2 {
+        padding-left: 75px;
+    }
+
+    .contenedor-3 .smartphone {
+        text-align: center;
+        margin: auto;
+        width: 500px;
+    }
+
+    .contenedor-3 .nosotros-texto {
+        padding: 20px;
+    }
+
+    .contenedor-4 .cont-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .cont-img img {
+        width: 50%;
+        margin-top: -2px;
+    }
+
+    .contenedor-5 .figures {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .figures figure {
+        width: 50%;
+    }
+
+    .figures figcaption {
+        font-size: 1.3em;
+    }
+
+    .contenedor-6 {
+        padding-top: 100px;
+    }
+
+    .contenedor-6 h2 {
+        font-size: 1.7em;
+        padding: 0px 20px;
+        width: 60%;
+    }
+
+    .contenedor-6 .btn {
+        width: 40%;
+        padding: 15px;
+        font-size: .9em;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
+    footer p {
+        margin-top: -30px;
+    }
+
+
+    @media screen and (min-width:920px) {
+        .label-menu {
+            display: none;
+        }
+
+        .desktop-menu {
+            display: block;
+        }
+
+        .desktop-menu ul {
+            display: flex;
+            padding-right: 20px;
+        }
+
+        .desktop-menu li {
+            list-style: none;
+        }
+
+        .desktop-menu a {
+            text-decoration: none;
+            padding-right: 30px;
+            font-family: 'IBM Plex Mono', monospace, sans-serif;
+            color: black;
+        }
+
+        .desktop-menu a:hover {
+            text-decoration: line-through;
+            color: #00F3BB;
+        }
+    }
+
+    @media screen and (min-width: 1020px){
+        .contenedor-1 {
+            width: 80%;
+            margin-left: 60px;
+            padding-top: 60px;
+        }
+
+        .contenedor-1 p {
+            font-size: .9em;
+        }
+
+        .contenedor-1 .btn {
+            width: 30%;
+            padding: 15px 0px;
+        }
+
+        .contenedor-2 {
+            width: 100vw;
+            padding-bottom: 100px;
+        }
+
+        .contenedor-2 h2 {
+            padding-left: 150px;
+        }
+
+        .cont-iframe {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            margin: 20px 0px;
+        }
+
+        .cont-iframe iframe {
+            width: 40%;
+            padding-right: 30px;
+            padding-bottom: 20px;
+        }
+
+        .contenedor-3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contenedor-3 .smartphone {
+            width: 30%;
+        }
+
+        .contenedor-3 .nosotros-texto {
+            width: 50%;
+            padding-top: 100px;
+        }
+
+        .nosotros-texto p {
+            font-size: .8em;
+            width: 90%;
+        }
+
+        .contenedor-4 .cont-img {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .contenedor-4 .h2-2,
+        .contenedor-5 .h2-2 {
+            padding-left: 100px;
+            font-size: 2.5em;
+        }
+
+        .cont-img img {
+            width: 33.33%;
+        }
+
+        .contenedor-5 .figures {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 0px 100px
+        }
+
+        .figures figure {
+            width: 20%;
+        }
+
+        .figures img {
+            width: 45%;
+        }
+
+        .figures figcaption {
+            font-size: 1em;
+        }
+
+        .contenedor-6 h2 {
+            font-size: 1.9em;
+            word-spacing: 2px;
+        }
+
+        .contenedor-6 .btn {
+            width: 25%;
+        }
+
+        footer {
+            padding: 12px 60px
+        }
+    }
