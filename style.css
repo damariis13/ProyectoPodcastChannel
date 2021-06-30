@@ -295,7 +295,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 80px 30px;
+    padding: 80px 0px;
 }
 
 .contenedor-6 h2 {
@@ -307,6 +307,8 @@ h2 {
 
 .contenedor-6 .btn {
     margin-top: 20px;
+    width: 80%;
+    padding: 15px 0px;
 }
 
 footer {
