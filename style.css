@@ -521,6 +521,7 @@ footer p {
 
         .cont-iframe iframe {
             width: 40%;
+            max-width: 600px;
             padding-right: 30px;
             padding-bottom: 20px;
         }
